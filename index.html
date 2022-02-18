@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Teko&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div id="calculator">
+        <p id="answer"></p>
+        <div id="numbers">
+            <div class="rows">
+                <p id="one" class="digits" onclick="numberOne()">1</p>
+                <p id="two" class="digits" onclick="numberTwo()">2</p>
+                <p id="three" class="digits" onclick="numberThree()">3</p>
+                <p id="plus" class="digits" onclick="numberPlus()">+</p>
+            </div>
+            <div class="rows">
+                <p id="four" class="digits" onclick="numberFour()">4</p>
+                <p id="five" class="digits" onclick="numberFive()">5</p>
+                <p id="six" class="digits" onclick="numberSix()">6</p>
+                <p id="minus" class="digits" onclick="numberMinus()">-</p>
+            </div>
+            <div class="rows">
+                <p id="seven" class="digits" onclick="numberSeven()">7</p>
+                <p id="eight" class="digits" onclick="numberEight()">8</p>
+                <p id="nine" class="digits" onclick="numberNine()">9</p>
+                <p id="multiply" class="digits" onclick="numberMultiply()">*</p>
+            </div>
+            <div class="rows">
+                <p id="divide" class="digits four" onclick="numberDivide()">/</p>
+                <p id="clear" class="digits four" onclick="Clear()">clear</p>
+                <p id="equal" class="digits four" onclick="Equal()">=</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>
