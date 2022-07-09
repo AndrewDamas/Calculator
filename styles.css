@@ -2,12 +2,15 @@ body {
     margin: 0;
     background-color: rgba(165, 103, 61, 0.685);
     font-family: 'Teko', sans-serif;
+    height: 1500px;
 }
+
+/* THE CALCULATOR */
 
 #calculator {
     position: relative;
     margin: 0 auto;
-    top: 180px;
+    top: 150px;
     width: 45%;
     max-width: 500px;
     min-width: 337px;
@@ -24,7 +27,7 @@ body {
     background-color: rgb(255, 245, 220);
     margin: 0 auto;
     top: 20px;
-    border: 2px solid rgba(70, 45, 3, 0.795);
+    border: 2px solid rgba(62, 40, 3, 0.795);
     border-radius: 3px;
     font-size: 60px;
     padding: 0px 10px;
@@ -40,7 +43,7 @@ body {
     height: 305px;
     background-color: rgb(244, 244, 10);
     border-radius: 3px;
-    border: 3px solid rgba(107, 68, 6, 0.062);
+    border: 3px solid rgba(107, 68, 6, 0.178);
     flex-direction: column;
     justify-content: space-between;
 }
@@ -49,6 +52,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.four {
+    width: 26%;
 }
 
 .digits {
@@ -60,9 +67,10 @@ body {
     line-height: 60px;
     font-size: 35px;
     margin: 0;
-    border: 2px solid rgba(102, 102, 5, 0.226);
     border-radius: 5px;
+    border: 2px solid rgba(102, 102, 5, 0.226);
     color: rgba(0, 0, 0, 0.822);
+    user-select: none;
 }
 
 .digits:hover {
@@ -73,6 +81,240 @@ body {
     background-color: rgb(138, 121, 91);
 }
 
-.four {
-    width: 26%;
+/* COLOR THEME SELECTION*/
+
+#colortheme {
+    position: relative;
+    display: flex;
+    width: 337px;
+    background-color: white;
+    height: 500px;
+    border-radius: 10px;
+    margin: 0 auto;
+    top: 300px;
+    box-shadow: 0px 3px 10px 0px black;
+    background-color: rgb(255, 245, 220);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#skincolumnone {
+    display: flex;
+    justify-content: space-between;
+}
+
+#skincolumntwo {
+    display: flex;
+    justify-content: space-between;
+}
+
+#backgroundskin {
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 1px 1px 0px;
+    padding: 0px 20% 1% 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
+#outsideskin {
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 0px 1px 0px;
+    padding: 0px 19% 1% 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
+#insideskin {
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 1px 0px 0px;
+    padding: 0% 31% 0% 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
+#numberskin {
+    padding: 0% 19% 0% 0px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
+.colors {
+    width: 70px;
+    height: 12px;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid black;
+}
+
+.colors:hover {
+    cursor: pointer;
+}  
+
+.color input[type='radio'] {
+    opacity: 0;
+    width: 0;
+    position: fixed;
+}
+
+.color label {
+    width: 70px;
+    height: 12px;
+    border: 1px solid black;
+}
+
+.color label:hover {
+    cursor: pointer;
+}
+
+#bgoriginal {
+    background-color: rgba(165, 103, 61, 0.685);
+}
+
+.black {
+    background-color: black;
+}
+
+.white {
+    background-color: white;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: rgb(244, 244, 10);
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.brown {
+    background-color: rgb(120, 78, 6);
+}
+
+/* DIFFERENT CALCULATOR THEME COLORS */
+
+#numoriginal {
+    background-color: rgb(193, 170, 130);
+}
+
+.numberoriginal {
+    background-color: rgb(193, 170, 130);
+    color: rgba(0, 0, 0, 0.822);
+    border: 2px solid rgba(102, 102, 5, 0.226);
+}
+
+.numberblack {
+    background-color: black;
+    color: rgba(255, 255, 255, 0.767);
+    border: 2px solid rgba(102, 102, 5, 0.226);
+}
+
+.numberwhite {
+    background-color: black;
+    color: rgba(255, 255, 255, 0.767);
+    border: 2px solid rgba(102, 102, 5, 0.226);
+}
+
+.numberblack {
+    background-color: black;
+    color: rgba(255, 255, 255, 0.767);
+    border: 2px solid rgba(102, 102, 5, 0.226);
+}
+
+.numberblack {
+    background-color: black;
+    color: rgba(255, 255, 255, 0.767);
+    border: 2px solid rgba(102, 102, 5, 0.226);
+}
+
+.numberblack {
+    background-color: black;
+    color: rgba(255, 255, 255, 0.767);
+    border: 2px solid rgba(102, 102, 5, 0.226);
+}
+
+.numberblack {
+    background-color: black;
+    color: rgba(255, 255, 255, 0.767);
+    border: 2px solid rgba(102, 102, 5, 0.226);
+}
+
+.numberblack {
+    background-color: black;
+    color: rgba(255, 255, 255, 0.767);
+    border: 2px solid rgba(102, 102, 5, 0.226);
+}
+
+.numberblack {
+    background-color: black;
+    color: rgba(255, 255, 255, 0.767);
+    border: 2px solid rgba(102, 102, 5, 0.226);
+}
+
+/* BELOW IS MAKE INVISIBLE BUTTON. NEED TO FIX BEFORE ADDING */
+
+/* #invisible {
+    position: relative;
+    text-align: center;
+    top: 100px;
+    border: 1px solid black;
+    width: 150px;
+    height: 30px;
+    margin: 0 auto;
+    font-size: 20px;
+    user-select: none;
+}
+
+#invisible:hover {
+    cursor: pointer;
+}
+
+#invisible:active {
+    background-color: rgba(0, 0, 0, 0.473);
+} */
+
+@media only screen and (min-width: 768px) {
+    body {
+        display: flex;
+        height: 100px;
+    }
+
+    #colortheme {
+        top: 136px;
+    }
+
+    #invisible {
+        position: absolute;
+        text-align: center;
+        top: 100px;
+        left: 22%;
+    }
 }
