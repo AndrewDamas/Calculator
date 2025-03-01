@@ -1,112 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Teko&display=swap" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
-    <!--BELOW IS MAKE INVISIBLE BUTTON. NEED TO FIX BEFORE ADDING-->
+	<head>
+		<link rel="stylesheet" href="styles.css" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Teko&display=swap"
+			rel="stylesheet" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="calculator">
+			<p id="answer"></p>
+			<div id="numbers">
+				<div class="rows">
+					<p id="one" class="digits" onclick="selectDigit('1')">1</p>
+					<p id="two" class="digits" onclick="selectDigit('2')">2</p>
+					<p id="three" class="digits" onclick="selectDigit('3')">
+						3
+					</p>
+					<p id="plus" class="digits" onclick="selectDigit('+')">+</p>
+				</div>
+				<div class="rows">
+					<p id="four" class="digits" onclick="selectDigit('4')">4</p>
+					<p id="five" class="digits" onclick="selectDigit('5')">5</p>
+					<p id="six" class="digits" onclick="selectDigit('6')">6</p>
+					<p id="minus" class="digits" onclick="selectDigit('-')">
+						-
+					</p>
+				</div>
+				<div class="rows">
+					<p id="seven" class="digits" onclick="selectDigit('7')">
+						7
+					</p>
+					<p id="eight" class="digits" onclick="selectDigit('8')">
+						8
+					</p>
+					<p id="nine" class="digits" onclick="selectDigit('9')">9</p>
+					<p id="multiply" class="digits" onclick="selectDigit('*')">
+						*
+					</p>
+				</div>
+				<div class="rows">
+					<p id="zero" class="digits four" onclick="selectDigit('0')">
+						0
+					</p>
+					<p
+						id="decimal"
+						class="digits four"
+						onclick="selectDigit('.')">
+						.
+					</p>
+					<p
+						id="negative"
+						class="digits four"
+						onclick="selectDigit('-')">
+						+-
+					</p>
+				</div>
+				<div class="rows">
+					<p
+						id="divide"
+						class="digits four"
+						onclick="selectDigit('/')">
+						/
+					</p>
+					<p id="clear" class="digits four" onclick="Clear()">
+						clear
+					</p>
+					<p id="equal" class="digits four" onclick="solveEquation()">
+						=
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id="colortheme">
+			<button id="invisible" onclick="makeInvisible()">
+				MAKE INVISIBLE
+			</button>
+			<div id="color-selector">
+				<div>
+					<p>BACKGROUND SKIN</p>
+					<div
+						class="colors bgoriginal"
+						id="bgoriginal"
+						onclick="changeBackgroundColor('bgoriginal')"></div>
+					<div
+						class="colors black"
+						id="bgblack"
+						onclick="changeBackgroundColor('black')"></div>
+					<div
+						class="colors white"
+						id="bgwhite"
+						onclick="changeBackgroundColor('white')"></div>
+					<div
+						class="colors red"
+						id="bgred"
+						onclick="changeBackgroundColor('red')"></div>
+					<div
+						class="colors orange"
+						id="bgorange"
+						onclick="changeBackgroundColor('orange')"></div>
+					<div
+						class="colors yellow"
+						id="bgyellow"
+						onclick="changeBackgroundColor('yellow')"></div>
+					<div
+						class="colors green"
+						id="bggreen"
+						onclick="changeBackgroundColor('green')"></div>
+					<div
+						class="colors blue"
+						id="bgblue"
+						onclick="changeBackgroundColor('blue')"></div>
+					<div
+						class="colors purple"
+						id="bgpurple"
+						onclick="changeBackgroundColor('purple')"></div>
+				</div>
+				<div>
+					<p>OUTSIDE SKIN</p>
+					<div
+						class="colors brown outside-options"
+						id="outbrown"
+						onclick="changeOutsideColor('brown')"></div>
+					<div
+						class="colors black outside-options"
+						id="outblack"
+						onclick="changeOutsideColor('black')"></div>
+					<div
+						class="colors white outside-options"
+						id="outwhite"
+						onclick="changeOutsideColor('white')"></div>
+					<div
+						class="colors red outside-options"
+						id="outred"
+						onclick="changeOutsideColor('red')"></div>
+					<div
+						class="colors orange outside-options"
+						id="outorange"
+						onclick="changeOutsideColor('orange')"></div>
+					<div
+						class="colors yellow outside-options"
+						id="outyellow"
+						onclick="changeOutsideColor('yellow')"></div>
+					<div
+						class="colors green outside-options"
+						id="outgreen"
+						onclick="changeOutsideColor('green')"></div>
+					<div
+						class="colors blue outside-options"
+						id="outblue"
+						onclick="changeOutsideColor('blue')"></div>
+					<div
+						class="colors purple outside-options"
+						id="outpurple"
+						onclick="changeOutsideColor('purple')"></div>
+				</div>
+				<div>
+					<p>INSIDE SKIN</p>
+					<div
+						class="colors yellow"
+						id="inyellow"
+						onclick="changeInsideColor('yellow')"></div>
+					<div
+						class="colors black"
+						id="inblack"
+						onclick="changeInsideColor('black')"></div>
+					<div
+						class="colors white"
+						id="inwhite"
+						onclick="changeInsideColor('white')"></div>
+					<div
+						class="colors red"
+						id="inred"
+						onclick="changeInsideColor('red')"></div>
+					<div
+						class="colors orange"
+						id="inorange"
+						onclick="changeInsideColor('orange')"></div>
+					<div
+						class="colors brown"
+						id="inbrown"
+						onclick="changeInsideColor('brown')"></div>
+					<div
+						class="colors green"
+						id="ingreen"
+						onclick="changeInsideColor('green')"></div>
+					<div
+						class="colors blue"
+						id="inblue"
+						onclick="changeInsideColor('blue')"></div>
+					<div
+						class="colors purple"
+						id="inpurple"
+						onclick="changeInsideColor('purple')"></div>
+				</div>
+				<div>
+					<p>NUMBER SKIN</p>
+					<div
+						class="colors"
+						id="numoriginal"
+						onclick="changeNumberButtonColor('numoriginal')"></div>
+					<div
+						class="colors black"
+						id="numblack"
+						onclick="changeNumberButtonColor('black')"></div>
+					<div
+						class="colors white"
+						id="numwhite"
+						onclick="changeNumberButtonColor('white')"></div>
+					<div
+						class="colors red"
+						id="numred"
+						onclick="changeNumberButtonColor('red')"></div>
+					<div
+						class="colors orange"
+						id="numorange"
+						onclick="changeNumberButtonColor('orange')"></div>
+					<div
+						class="colors yellow"
+						id="numyellow"
+						onclick="changeNumberButtonColor('yellow')"></div>
+					<div
+						class="colors green"
+						id="numgreen"
+						onclick="changeNumberButtonColor('green')"></div>
+					<div
+						class="colors blue"
+						id="numblue"
+						onclick="changeNumberButtonColor('blue')"></div>
+					<div
+						class="colors purple"
+						id="numpurple"
+						onclick="changeNumberButtonColor('purple')"></div>
+				</div>
+			</div>
+		</div>
 
-   <!--  <p id="invisible" onclick="makeInvisible()">MAKE INVISIBLE</p> -->
-    <div id="calculator">
-        <p id="answer"></p>
-        <div id="numbers">
-            <div class="rows">
-                <p id="one" class="digits" onclick="numberOne()">1</p>
-                <p id="two" class="digits" onclick="numberTwo()">2</p>
-                <p id="three" class="digits" onclick="numberThree()">3</p>
-                <p id="plus" class="digits" onclick="numberPlus()">+</p>
-            </div>
-            <div class="rows">
-                <p id="four" class="digits" onclick="numberFour()">4</p>
-                <p id="five" class="digits" onclick="numberFive()">5</p>
-                <p id="six" class="digits" onclick="numberSix()">6</p>
-                <p id="minus" class="digits" onclick="numberMinus()">-</p>
-            </div>
-            <div class="rows">
-                <p id="seven" class="digits" onclick="numberSeven()">7</p>
-                <p id="eight" class="digits" onclick="numberEight()">8</p>
-                <p id="nine" class="digits" onclick="numberNine()">9</p>
-                <p id="multiply" class="digits" onclick="numberMultiply()">*</p>
-            </div>
-            <div class="rows">
-                <p id="zero" class="digits four" onclick="numberZero()">0</p>
-                <p id="decimal" class="digits four" onclick="Decimal()">.</p>
-                <p id="negative" class="digits four" onclick="Negative()">+-</p>
-            </div>
-            <div class="rows">
-                <p id="divide" class="digits four" onclick="numberDivide()">/</p>
-                <p id="clear" class="digits four" onclick="Clear()">clear</p>
-                <p id="equal" class="digits four" onclick="Equal()">=</p>
-            </div>
-        </div>
-    </div>
-    <div id="colortheme">
-        <div id="skincolumnone">
-            <div id="backgroundskin" class="color">
-                <p>BACKGROUND SKIN</p>
-                <input type="radio">
-                <label for="bgoriginal" id="bgoriginal" onclick="changeBackgroundOriginal()"></label>
-                <input type="radio" class="black" id="bgblack">
-                <label for="bgblack" onclick="changeBackgroundBlack()"></label>
-                <div class="colors black" id="bgblack" onclick="changeBackgroundBlack()"></div>
-                <div class="colors white" id="bgwhite" onclick="changeBackgroundWhite()"></div>
-                <div class="colors red" id="bgred" onclick="changeBackgroundRed()"></div>
-                <div class="colors orange" id="bgorange" onclick="changeBackgroundOrange()"></div>
-                <div class="colors yellow" id="bgyellow" onclick="changeBackgroundYellow()"></div>
-                <div class="colors green" id="bggreen" onclick="changeBackgroundGreen()"></div>
-                <div class="colors blue" id="bgblue" onclick="changeBackgroundBlue()"></div>
-                <div class="colors purple" id="bgpurple" onclick="changeBackgroundPurple()"></div>
-            </div>
-            <div id="outsideskin">
-                <p>OUTSIDE SKIN</p>
-                <div class="colors brown outside-options" id="outbrown" onclick="changeOutsideBrown()"></div>
-                <div class="colors black outside-options" id="outblack" onclick="changeOutsideBlack()"></div>
-                <div class="colors white outside-options" id="outwhite" onclick="changeOutsideWhite()"></div>
-                <div class="colors red outside-options" id="outred" onclick="changeOutsideRed()"></div>
-                <div class="colors orange outside-options" id="outorange" onclick="changeOutsideOrange()"></div>
-                <div class="colors yellow outside-options" id="outyellow" onclick="changeOutsideYellow()"></div>
-                <div class="colors green outside-options" id="outgreen" onclick="changeOutsideGreen()"></div>
-                <div class="colors blue outside-options" id="outblue" onclick="changeOutsideBlue()"></div>
-                <div class="colors purple outside-options " id="outpurple" onclick="changeOutsidePurple()"></div>
-            </div>
-        </div>
-        <div id="skincolumntwo">
-            <div id="insideskin">
-                <p>INSIDE SKIN</p>
-                <div class="colors yellow" id="inyellow" onclick="changeInsideYellow()"></div>
-                <div class="colors black" id="inblack" onclick="changeInsideBlack()"></div>
-                <div class="colors white" id="inwhite" onclick="changeInsideWhite()"></div>
-                <div class="colors red" id="inred" onclick="changeInsideRed()"></div>
-                <div class="colors orange" id="inorange" onclick="changeInsideOrange()"></div>
-                <div class="colors brown" id="inbrown" onclick="changeInsideBrown()"></div>
-                <div class="colors green" id="ingreen" onclick="changeInsideGreen()"></div>
-                <div class="colors blue" id="inblue" onclick="changeInsideBlue()"></div>
-                <div class="colors purple" id="inpurple" onclick="changeInsidePurple()"></div>
-            </div>
-            <div id="numberskin">
-                <p>NUMBER SKIN</p>
-                <div class="colors" id="numoriginal" onclick="changeNumberOriginal()"></div>
-                <div class="colors black" id="numblack" onclick="changeNumberBlack()"></div>
-                <div class="colors white" id="numwhite" onclick="changeNumberWhite()"></div>
-                <div class="colors red" id="numred" onclick="changeNumberRed()"></div>
-                <div class="colors orange" id="numorange" onclick="changeNumberOrange()"></div>
-                <div class="colors yellow" id="numyellow" onclick="changeNumberYellow()"></div>
-                <div class="colors green" id="numgreen" onclick="changeNumberGreen()"></div>
-                <div class="colors blue" id="numblue" onclick="changeNumberBlue()"></div>
-                <div class="colors purple" id="numpurple" onclick="changeNumberPurple()"></div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <script src="scripts.js"></script>
-</body>
+		<script src="scripts/calculations.js"></script>
+		<script src="scripts/calcTheme.js"></script>
+	</body>
 </html>
